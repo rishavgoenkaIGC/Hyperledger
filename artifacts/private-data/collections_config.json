@@ -1,23 +1,11 @@
 [
      {
-          "name": "collectionCars",
-          "policy": "OR('Org1MSP.member', 'Org2MSP.member')",
+          "name": "collectionOrgs",
+          "policy": "OR('Org1MSP.member', 'Org2MSP.member', 'Org3MSP.member', 'Org4MSP.member', 'Org5MSP.member')",
           "requiredPeerCount": 0,
           "maxPeerCount": 3,
           "blockToLive": 1000000,
           "memberOnlyRead": true,
           "memberOnlyWrite": true
-     },
-     {
-          "name": "collectionCarPrivateDetails",
-          "policy": "OR('Org1MSP.member')",
-          "requiredPeerCount": 0,
-          "maxPeerCount": 3,
-          "blockToLive": 3,
-          "memberOnlyRead": true,
-          "memberOnlyWrite": true,
-          "endorsementPolicy": {
-               "signaturePolicy": "OR('Org1MSP.member')"
-          }
      }
 ]

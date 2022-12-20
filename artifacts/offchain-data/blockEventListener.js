@@ -13,7 +13,7 @@ a specified channel.
 Configuration is stored in config.json:
 
 {
-   "peer_name": "peer0.org1.example.com",
+   "peer_name": "peer0.org1.iitdhanbad.com",
    "channelid": "mychannel",
    "use_couchdb":false,
    "couchdb_address": "http://localhost:5990"

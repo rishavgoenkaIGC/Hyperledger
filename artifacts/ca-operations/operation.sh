@@ -2,7 +2,7 @@ export FABRIC_CA_CLIENT_HOME=${PWD}/clients/admin
 
 EnrollAdmin() {
 
-    fabric-ca-client enroll -u https://admin:adminpw@localhost:7054 --caname ca.org1.example.com --tls.certfiles ${PWD}/fabric-ca/tls-cert.pem
+    fabric-ca-client enroll -u https://admin:adminpw@localhost:7054 --caname ca.org1.iitdhanbad.com --tls.certfiles ${PWD}/fabric-ca/tls-cert.pem
 
 }
 
@@ -13,7 +13,7 @@ RegisterNewAdmin() {
     # fabric-ca-client register --id.name admin2 --id.affiliation org1.department1 --id.attrs 'hf.Revoker=true,admin=true:ecert'
     # fabric-ca-client register -d --id.name admin2 --id.affiliation org1.department1 --id.attrs '"hf.Registrar.Roles=peer,client"' --id.attrs hf.Revoker=true
     fabric-ca-client register \
-        --caname ca.org1.example.com \
+        --caname ca.org1.iitdhanbad.com \
         --id.name admin3 \
         --id.secret admin3pw \
         --id.type admin \
@@ -26,7 +26,7 @@ RegisterNewAdmin() {
 
 RegisterPeer() {
     fabric-ca-client register \
-        --caname ca.org1.example.com \
+        --caname ca.org1.iitdhanbad.com \
         --id.name peer4 \
         --id.secret peer4pw \
         --id.type peer \
@@ -36,7 +36,7 @@ RegisterPeer() {
         --tls.certfiles ${PWD}/fabric-ca/tls-cert.pem
 
     # fabric-ca-client register \
-    #     --caname ca.org1.example.com \
+    #     --caname ca.org1.iitdhanbad.com \
     #     --id.name peer3 \
     #     --id.type peer \
     #     --id.affiliation org1.department1 \
@@ -52,9 +52,9 @@ EnrollPeer() {
 
     fabric-ca-client enroll \
         -u https://peer4:peer4pw@localhost:7054 \
-        --caname ca.org1.example.com \
+        --caname ca.org1.iitdhanbad.com \
         -M ${PWD}/clients/peer1/msp \
-        --csr.hosts peer0.org1.example.com \
+        --csr.hosts peer0.org1.iitdhanbad.com \
         --tls.certfiles ${PWD}/fabric-ca/tls-cert.pem
 }
 
@@ -66,7 +66,7 @@ ReenrollIdentity() {
     fabric-ca-client \
         reenroll \
         -u https://peer4:peer4pw@localhost:7054 \
-        --caname ca.org1.example.com \
+        --caname ca.org1.iitdhanbad.com \
         --tls.certfiles ${PWD}/fabric-ca/tls-cert.pem
 }
 
